@@ -7,10 +7,12 @@ import nyc.c4q.josiel.animalcolor.R;
 import nyc.c4q.josiel.animalcolor.backend.Animals;
 
 public class AnimalViewHolder extends RecyclerView.ViewHolder{
+
     TextView animalName;
 
     public AnimalViewHolder(View itemView) {
         super(itemView);
+
         animalName = (TextView) itemView.findViewById(R.id.animal_name);
     }
 

@@ -3,9 +3,7 @@ package nyc.c4q.josiel.animalcolor.backend;
 public class Animals {
 
     private String textColor;
-
     private String background;
-
     private String name;
 
     public String getTextColor() {

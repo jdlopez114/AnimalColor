@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.List;
+import nyc.c4q.josiel.animalcolor.R;
 import nyc.c4q.josiel.animalcolor.backend.Animals;
 
 
