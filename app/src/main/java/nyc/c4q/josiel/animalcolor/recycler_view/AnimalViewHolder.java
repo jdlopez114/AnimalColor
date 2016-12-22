@@ -1,5 +1,6 @@
 package nyc.c4q.josiel.animalcolor.recycler_view;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -18,5 +19,6 @@ public class AnimalViewHolder extends RecyclerView.ViewHolder{
 
     public void bind (Animals animals){
         animalName.setText(animals.getName());
+        animalName.setTextColor(Color.parseColor(animals.getTextColor()));
     }
 }
