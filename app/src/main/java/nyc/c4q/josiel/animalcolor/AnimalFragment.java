@@ -1,5 +1,6 @@
 package nyc.c4q.josiel.animalcolor;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,8 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import nyc.c4q.josiel.animalcolor.backend.APIService;
 import nyc.c4q.josiel.animalcolor.backend.AnimalResponse;
 import nyc.c4q.josiel.animalcolor.backend.Animals;
@@ -19,21 +23,29 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class AnimalFragment extends Fragment {
+import static android.R.attr.fragment;
+
+public class AnimalFragment extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView;
     AnimalAdapter animalAdapter;
     List<Animals> animalsList = new ArrayList<>();
+    View colorFrag;
+    View frag_color;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_view, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+//        colorFrag = root.findViewById(R.id.fragment_color);
+        frag_color = root.findViewById(R.id.fragment_color);
+        frag_color.setOnClickListener(this);
         fetchAnimals();
         return root;
     }
+
 
     private void fetchAnimals() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -60,5 +72,12 @@ public class AnimalFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+//        frag_color.setBackgroundColor(Color.parseColor(animals.getBackground()));
+    frag_color.setBackgroundColor(Color.parseColor(Animals.class.));
+
     }
 }

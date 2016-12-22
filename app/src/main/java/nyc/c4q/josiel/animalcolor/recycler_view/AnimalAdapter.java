@@ -1,5 +1,6 @@
 package nyc.c4q.josiel.animalcolor.recycler_view;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import nyc.c4q.josiel.animalcolor.backend.Animals;
 public class AnimalAdapter extends RecyclerView.Adapter <AnimalViewHolder> {
 
     List<Animals> animalsList;
+    View colorFrag;
 
     public AnimalAdapter(List<Animals> animalsList) {
         this.animalsList = animalsList;
@@ -34,4 +36,8 @@ public class AnimalAdapter extends RecyclerView.Adapter <AnimalViewHolder> {
     public int getItemCount() {
         return animalsList.size();
     }
+
+
+
+
 }
